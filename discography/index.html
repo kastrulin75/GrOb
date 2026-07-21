@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Дискография — Гражданская Оборона</title>
+  <meta name="description" content="Дискография Гражданской Обороны и Егора Летова." />
+  <link rel="icon" href="../image/icon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="../image/icon.png" />
+  <link rel="stylesheet" href="../shared/chrome.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true">
+    <div class="page-bg__layer is-active" id="bg-a"></div>
+    <div class="page-bg__layer" id="bg-b"></div>
+    <div class="page-bg__veil"></div>
+  </div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header site-header--static" id="top">
+    <a class="logo" href="../index.html">ГРАЖДАНСКАЯ ОБОРОНА</a>
+    <button class="nav-toggle" type="button" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="../index.html">Главная</a>
+      <a href="../philosophy/index.html">Философия</a>
+      <a href="index.html" aria-current="page">Дискография</a>
+    </nav>
+  </header>
+
+  <main class="disco">
+    <section class="carousel" aria-roledescription="карусель" aria-label="Альбомы">
+      <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Предыдущий альбом">
+        <svg viewBox="0 0 24 48" aria-hidden="true" focusable="false">
+          <path d="M17 4 L7 24 L17 44" />
+        </svg>
+      </button>
+
+      <div class="carousel__stage">
+        <div class="carousel__track" id="carousel-track"></div>
+        <button class="play-btn" type="button" id="play-btn" aria-label="Слушать" aria-pressed="false">
+          <svg class="play-btn__icon play-btn__icon--play" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 5v14l12-7z" />
+          </svg>
+          <svg class="play-btn__icon play-btn__icon--pause" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 5h3v14H7zm7 0h3v14h-3z" />
+          </svg>
+        </button>
+      </div>
+
+      <button class="carousel__btn carousel__btn--next" type="button" aria-label="Следующий альбом">
+        <svg viewBox="0 0 24 48" aria-hidden="true" focusable="false">
+          <path d="M7 4 L17 24 L7 44" />
+        </svg>
+      </button>
+    </section>
+
+    <div class="album-meta" id="album-meta" aria-live="polite">
+      <h2 class="album-meta__title"></h2>
+      <p class="album-meta__group"></p>
+      <p class="album-meta__year"></p>
+      <p class="album-meta__desc"></p>
+      <p class="album-meta__count"></p>
+
+      <div class="track-timer" aria-hidden="true">
+        <div class="track-timer__fill" id="track-timer-fill"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© Гражданская Оборона · Егор Летов</p>
+    <p class="footer-credit">Сайт сделан Матвеевым Ефимом в 2026. Все права защищены.</p>
+  </footer>
+
+  <script src="../shared/chrome.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
