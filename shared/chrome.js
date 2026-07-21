@@ -33,15 +33,22 @@
     img.setAttribute("draggable", "false");
     img.addEventListener("dragstart", (e) => e.preventDefault());
 
+    // Skip full-bleed / decorative layers so overlays never block UI
+    if (
+      img.closest(".hero__media, .anniversary__media, .page-bg, a")
+    ) {
+      return;
+    }
+
     const parent = img.parentElement;
-    if (!parent || parent.closest("a")) return;
+    if (!parent) return;
 
     const style = window.getComputedStyle(parent);
     if (style.position === "static") {
       parent.style.position = "relative";
     }
 
-    if (!parent.querySelector(":scope > .img-hover-shield")) {
+    if (!parent.querySelector(".img-hover-shield")) {
       const shield = document.createElement("span");
       shield.className = "img-hover-shield";
       shield.setAttribute("aria-hidden", "true");

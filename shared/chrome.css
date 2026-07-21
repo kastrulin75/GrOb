@@ -77,10 +77,16 @@ img {
   pointer-events: auto;
 }
 
+main,
+.site-footer {
+  position: relative;
+  z-index: 2;
+}
+
 .site-header {
   position: fixed;
   inset: 0 0 auto;
-  z-index: 40;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -94,6 +100,7 @@ img {
   background: linear-gradient(180deg, rgba(14, 9, 8, 0.92), rgba(14, 9, 8, 0.55) 70%, transparent);
   backdrop-filter: blur(6px);
   transition: background 0.4s var(--chrome-ease), border-color 0.4s;
+  pointer-events: auto;
 }
 
 .site-header.is-scrolled {
@@ -233,12 +240,14 @@ img {
     top: 100%;
     left: 0;
     right: 0;
+    z-index: 110;
     display: none;
     flex-direction: column;
     gap: 0;
     padding: 0.35rem 0 calc(0.85rem + env(safe-area-inset-bottom, 0px));
     background: rgba(14, 9, 8, 0.97);
     border-bottom: 1px solid var(--chrome-line);
+    pointer-events: auto;
   }
 
   .nav.is-open {
@@ -248,6 +257,15 @@ img {
   .nav a {
     padding: 0.95rem var(--page-pad-x);
     font-size: 1.05rem;
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-toggle {
+    position: relative;
+    z-index: 120;
+    flex-shrink: 0;
   }
 
   .site-footer {
